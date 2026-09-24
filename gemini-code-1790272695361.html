@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST FOR UNIT 16 - BÀI KIỂM TRA TỔNG HỢP (50 CÂU) - Ms Lê Hằng English</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatPattern {
+            from { background-position: 0 0; }
+            to { background-position: 120px 240px; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        body {
+            font-family: 'Quicksand', 'Nunito', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #10B981, #3B82F6, #8B5CF6, #EC4899);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 24px 12px;
+            position: relative;
+            color: #2D3748;
+            overflow-x: hidden;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.22'%3E%3Cpath d='M11 18l3 6 6 3-6 3-3 6-3-6-6-3 6-3z'/%3E%3Cpath d='M70 60l2 4 4 2-4 2-2 4-2-4-4-2 4-2z'/%3E%3Ccircle cx='40' cy='70' r='5'/%3E%3Ccircle cx='80' cy='20' r='6'/%3E%3Cpath d='M45 20c-3 0-5 2-5 5s2 5 5 5 5-2 5-5-2-5-5-5z'/%3E%3C/g%3E%3C/svg%3E");
+            animation: floatPattern 20s linear infinite;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .teacher-badge {
+            display: inline-block;
+            background: #ffffff;
+            color: #10B981;
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 8px 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .main-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-bottom: 6px;
+        }
+
+        .warning-box {
+            background: #FFF3BF;
+            border: 3px dashed #FAB005;
+            border-radius: 20px;
+            padding: 18px 22px;
+            text-align: center;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .warning-title {
+            color: #D9480F;
+            font-weight: 900;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .warning-text {
+            color: #495057;
+            font-size: 0.98rem;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .warning-highlight {
+            color: #E67E22;
+            font-weight: 900;
+            margin-top: 6px;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .section-header-title {
+            background: #2D3748;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 16px;
+            margin: 35px 0 18px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .question-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 26px 30px;
+            margin-bottom: 26px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transition: transform 0.2s ease;
+        }
+
+        .question-card.shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .question-number {
+            background: #10B981;
+            color: white;
+            font-weight: 900;
+            font-size: 1rem;
+            padding: 6px 16px;
+            border-radius: 14px;
+            margin-right: 12px;
+            box-shadow: 0 3px 0 #059669;
+            flex-shrink: 0;
+        }
+
+        .question-instruction {
+            font-weight: 800;
+            color: #4A5568;
+            font-size: 0.95rem;
+        }
+
+        .question-text {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #2D3748;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            white-space: pre-line;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: #F7FAFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 14px 20px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #2D3748;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #CBD5E0;
+            transition: all 0.15s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 8px 0 #CBD5E0;
+            background-color: #EDF2F7;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #CBD5E0;
+        }
+
+        .option-btn.correct {
+            background-color: #00D26A !important;
+            color: white !important;
+            border-color: #00B85C !important;
+            box-shadow: 0 5px 0 #00994D !important;
+        }
+
+        .option-btn.wrong {
+            background-color: #FF4757 !important;
+            color: white !important;
+            border-color: #E03947 !important;
+            box-shadow: 0 5px 0 #C0392B !important;
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+            opacity: 0.95;
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 22px;
+            background: #EBF8FF;
+            border: 2px solid #63B3ED;
+            border-radius: 18px;
+            padding: 22px;
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        .explanation-title {
+            font-weight: 900;
+            color: #2B6CB0;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px dashed #90CDF4;
+            padding-bottom: 8px;
+        }
+
+        .exp-section {
+            margin-bottom: 14px;
+        }
+
+        .exp-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-section-title {
+            font-weight: 800;
+            color: #2D3748;
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+        }
+
+        .options-breakdown-list {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 6px 0;
+            border: 1px solid #CBD5E0;
+        }
+
+        .option-breakdown-item {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #4A5568;
+            line-height: 1.5;
+        }
+
+        .option-breakdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .submit-btn {
+            background: #10B981;
+            color: white;
+            font-size: 1.45rem;
+            font-weight: 900;
+            padding: 18px 54px;
+            border: none;
+            border-radius: 28px;
+            box-shadow: 0 8px 0 #059669;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 0 #059669;
+            background: #34D399;
+        }
+
+        .submit-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #059669;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 28px;
+            padding: 35px 28px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            position: relative;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-score {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #10B981;
+            margin: 15px 0;
+        }
+
+        .modal-feedback {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #2D3748;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            background: #F7FAFC;
+            padding: 18px;
+            border-radius: 18px;
+            border: 2px solid #E2E8F0;
+        }
+
+        .modal-close-btn {
+            background: #10B981;
+            color: white;
+            font-weight: 900;
+            font-size: 1.15rem;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 0 #059669;
+            cursor: pointer;
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-pattern"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="teacher-badge">Giáo viên tạo: Ms Lê Hằng English</div>
+            <h1 class="main-title">TEST FOR UNIT 16 - BÀI KIỂM TRA TỔNG HỢP (50 CÂU)</h1>
+        </header>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <div class="warning-title">⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</div>
+            <div class="warning-text">
+                Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng và cấu trúc mới vào vở để học thì mới thực sự giỏi lên.<br>
+                Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!
+                <span class="warning-highlight">* Kéo tới đâu, làm tới đó! *</span>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container"></div>
+
+        <!-- Submit Button -->
+        <div class="submit-section">
+            <button class="submit-btn" onclick="submitQuiz()">🎉 NỘP BÀI THI 🎉</button>
+        </div>
+    </div>
+
+    <!-- Modal Score Popup -->
+    <div class="modal-overlay" id="scoreModal">
+        <div class="modal-content">
+            <h2 style="font-size:1.8rem; font-weight:900; color:#2D3748;">KẾT QUẢ BÀI THI</h2>
+            <div class="modal-score" id="scoreDisplay">0 / 50</div>
+            <div class="modal-feedback" id="feedbackDisplay"></div>
+            <button class="modal-close-btn" onclick="closeModal()">Xem lại bài làm</button>
+        </div>
+    </div>
+
+    <script>
+        const rawQuizData = [
+            // ERROR IDENTIFICATION (1 - 5)
+            {
+                id: 1,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 1. On the Indian National Flag, the color deep saffron is supposed to represent sacrifice and renunciation of materialistic.",
+                options: [
+                    "supposed",
+                    "sacrifice",
+                    "of",
+                    "materialistic"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Trên Quốc kỳ Ấn Độ, màu nghệ sẫm được cho là đại diện cho sự hy sinh và sự từ bỏ chủ nghĩa vật chất.",
+                optionsBreakdown: [
+                    "A. supposed (tính từ/phân từ): được cho là.",
+                    "B. sacrifice (danh từ): sự hy sinh.",
+                    "C. of (giới từ): của.",
+                    "D. materialistic (tính từ): thuộc về vật chất (bị dùng sai từ loại)."
+                ],
+                whyCorrect: "Sau giới từ 'of' và đi cặp với danh từ 'renunciation of...', ta cần một danh từ để chỉ đối tượng bị từ bỏ (chủ nghĩa vật chất). Từ 'materialistic' là một tính từ, do đó phải sửa thành danh từ 'materialism'.",
+                whyOthersWrong: "Đáp án A dùng đúng cấu trúc be supposed to V. Đáp án B dùng đúng dạng danh từ đứng sau represent. Đáp án C dùng đúng giới từ chỉ sự sở hữu/thuộc về."
+            },
+            {
+                id: 2,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 2. Scoop up a tablespoon of the pork mixture and shape it to a tight ball.",
+                options: [
+                    "up",
+                    "mixture",
+                    "to",
+                    "tight"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Múc một thìa canh hỗn hợp thịt lợn và nặn nó thành một viên tròn chặt.",
+                optionsBreakdown: [
+                    "A. up (trạng từ): lên.",
+                    "B. mixture (danh từ): hỗn hợp.",
+                    "C. to (giới từ): đến, tới (bị dùng sai giới từ đi với động từ shape).",
+                    "D. tight (tính từ): chặt, nén chặt."
+                ],
+                whyCorrect: "Cấu trúc tạo hình cái gì thành hình dạng gì là 'shape something into something'. Do đó giới từ 'to' bị dùng sai và phải sửa thành 'into'.",
+                whyOthersWrong: "Đáp án A scoop up có nghĩa là múc lên (đúng). Đáp án B mixture là danh từ bổ nghĩa sau of (đúng). Đáp án D tight là tính từ bổ nghĩa cho ball (đúng)."
+            },
+            {
+                id: 3,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 3. But while your mind may be ready to wander to a faraway land, don't forget about home sweet house just yet.",
+                options: [
+                    "house",
+                    "be",
+                    "don't",
+                    "about"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Nhưng trong khi tâm trí bạn có thể đã sẵn sàng bay bổng đến một vùng đất xa xôi, đừng vội quên đi mái ấm gia đình thân thương.",
+                optionsBreakdown: [
+                    "A. house (danh từ): ngôi nhà (bị dùng sai thành ngữ).",
+                    "B. be (động từ nguyên mẫu): đi sau động từ khuyết thiếu may.",
+                    "C. don't (trợ động từ mệnh lệnh): đừng.",
+                    "D. about (giới từ): về."
+                ],
+                whyCorrect: "Thành ngữ cố định ca ngợi sự ấm áp của gia đình mái ấm là 'home sweet home'. Việc dùng từ 'house' thay cho 'home' ở đây là sai thành ngữ cố định.",
+                whyOthersWrong: "Đáp án B dùng đúng dạng nguyên mẫu sau may. Đáp án C dùng đúng dạng mệnh lệnh phủ định don't. Đáp án D dùng đúng giới từ đi sau forget."
+            },
+            {
+                id: 4,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 4. Colonial administrators responded by setting out special reserves for Aborigines.",
+                options: [
+                    "administrators",
+                    "out",
+                    "setting",
+                    "Aborigines"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Các nhà quản lý thuộc địa đã phản ứng bằng cách dành riêng các khu bảo tồn đặc biệt cho người thổ dân.",
+                optionsBreakdown: [
+                    "A. administrators (danh từ số nhiều): các nhà quản lý.",
+                    "B. out (trạng từ): ra ngoài (bị dùng sai cụm động từ).",
+                    "C. setting (danh động từ): việc thiết lập.",
+                    "D. Aborigines (danh từ số nhiều): người thổ dân."
+                ],
+                whyCorrect: "Cụm động từ 'set aside something for somebody' có nghĩa là dành riêng cái gì cho ai. Trong khi đó 'set out' có nghĩa là khởi hành hoặc trình bày. Do đó 'out' sai và phải sửa thành 'aside'.",
+                whyOthersWrong: "Đáp án A là danh từ số nhiều chỉ người làm chủ ngữ (đúng). Đáp án C ở dạng V-ing đứng sau giới từ by (đúng). Đáp án D là danh từ số nhiều chỉ nhóm người (đúng)."
+            },
+            {
+                id: 5,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 5. I couldn't base on my work - my mind was on other things.",
+                options: [
+                    "couldn't",
+                    "base",
+                    "on",
+                    "things"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Tôi không thể tập trung vào công việc của mình - tâm trí tôi đang để ở những việc khác.",
+                optionsBreakdown: [
+                    "A. couldn't (động từ khuyết thiếu quá khứ): đã không thể.",
+                    "B. base (động từ): dựa vào, căn cứ vào (bị dùng sai động từ).",
+                    "C. on (giới từ): trên, vào.",
+                    "D. things (danh từ số nhiều): những điều, những việc."
+                ],
+                whyCorrect: "Động từ 'base' có cấu trúc 'base A on B' (dựa A vào B). Để mang nghĩa tập trung vào cái gì, động từ chuẩn phải là 'concentrate' hoặc 'focus'. Do đó 'base' bị dùng sai và cần sửa thành 'concentrate' hoặc 'focus'.",
+                whyOthersWrong: "Đáp án A dùng đúng động từ khuyết thiếu thể phủ định trong quá khứ. Đáp án C dùng đúng giới từ on đi với concentrate/focus. Đáp án D dùng đúng danh từ số nhiều things."
+            },
+
+            // WORD PATTERNS (6 - 13)
+            {
+                id: 6,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 6. An apartment in a high-rise _______ might only cost S$100,000 but a detached bungalow is likely to be S$1.5 to S$2m.",
+                options: [
+                    "bulk",
+                    "mass",
+                    "block",
+                    "heap"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Một căn hộ trong một tòa nhà cao tầng có thể chỉ tốn 100.000 đô la Singapore nhưng một căn biệt thự đơn lập có khả năng lên tới 1,5 đến 2 triệu đô la Singapore.",
+                optionsBreakdown: [
+                    "A. bulk (danh từ): số lượng lớn, khối lượng.",
+                    "B. mass (danh từ): khối, đống, quần chúng.",
+                    "C. block (danh từ): tòa nhà lớn, dãy nhà.",
+                    "D. heap (danh từ): một đống hỗn độn."
+                ],
+                whyCorrect: "Cụm danh từ cố định 'a high-rise block' (hoặc 'block of flats') chỉ một tòa nhà chung cư cao tầng.",
+                whyOthersWrong: "Các danh từ bulk, mass, heap không kết hợp với high-rise để chỉ tòa nhà chung cư cao tầng."
+            },
+            {
+                id: 7,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 7. It synthesized the studies of history, economics and political institutions and drew conclusions that helped lay the _______ of modern socialism.",
+                options: [
+                    "foundations",
+                    "floors",
+                    "bases",
+                    "platform"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Nó đã tổng hợp các nghiên cứu về lịch sử, kinh tế và thể chế chính trị rồi đưa ra các kết luận giúp đặt nền móng cho chủ nghĩa xã hội hiện đại.",
+                optionsBreakdown: [
+                    "A. foundations (danh từ số nhiều): móng nhà, nền móng phát triển.",
+                    "B. floors (danh từ số nhiều): sàn nhà, tầng nhà.",
+                    "C. bases (danh từ số nhiều): căn cứ, chân đế.",
+                    "D. platform (danh từ): thềm, bệ, nền tảng chương trình."
+                ],
+                whyCorrect: "Cụm từ cố định 'lay the foundations of something' có nghĩa là đặt nền móng/cơ sở cho sự phát triển của cái gì.",
+                whyOthersWrong: "Các từ floors, bases, platform không nằm trong cụm từ cố định 'lay the foundations of'."
+            },
+            {
+                id: 8,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 8. The economic treatment of teacher refers to material _______ as the payment, welfare, subvention, subsidy and bounty etc, legally given for teachers labor.",
+                options: [
+                    "awards",
+                    "rewards",
+                    "prizes",
+                    "grants"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Chế độ đãi ngộ kinh tế đối với giáo viên đề cập đến các khoản phần thưởng/đãi ngộ vật chất như lương, phúc lợi, trợ cấp, bù giá, v.v., được trao hợp pháp cho sức lao động của giáo viên.",
+                optionsBreakdown: [
+                    "A. awards (danh từ số nhiều): giải thưởng trao giải.",
+                    "B. rewards (danh từ số nhiều): phần thưởng đãi ngộ lao động.",
+                    "C. prizes (danh từ số nhiều): giải thưởng cuộc thi.",
+                    "D. grants (danh từ số nhiều): khoản tiền tài trợ."
+                ],
+                whyCorrect: "Cụm danh từ 'material rewards' dùng để chỉ các phần thưởng/đãi ngộ bằng vật chất hoặc tài chính đáp lại công sức lao động.",
+                whyOthersWrong: "Awards là giải thưởng danh dự. Prizes là phần thưởng thi đấu. Grants là tiền tài trợ dự án/học bổng."
+            },
+            {
+                id: 9,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 9. Even gold, the _______ metal that investors rush to in times of trouble, fell 5%.",
+                options: [
+                    "priceless",
+                    "mediocre",
+                    "precious",
+                    "trivial"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Ngay cả vàng, kim loại quý mà các nhà đầu tư đổ xô vào trong những thời điểm khủng hoảng, cũng đã giảm 5%.",
+                optionsBreakdown: [
+                    "A. priceless (tính từ): vô giá, không định giá nổi.",
+                    "B. mediocre (tính từ): tầm thường, bình thường.",
+                    "C. precious (tính từ): quý giá, đắt tiền.",
+                    "D. trivial (tính từ): tầm thường, không quan trọng."
+                ],
+                whyCorrect: "Thuật ngữ ngành địa chất và tài chính chỉ kim loại quý (như vàng, bạc, bạch kim) luôn là 'precious metal'.",
+                whyOthersWrong: "Priceless thường dùng cho tác phẩm nghệ thuật vô giá. Mediocre và trivial mang nghĩa tầm thường trái ngược với vàng."
+            },
+            {
+                id: 10,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 10. Has he gotten overweight and out of _______, ala what happened with Levon Kirkland?",
+                options: [
+                    "shape",
+                    "figure",
+                    "form",
+                    "stature"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Có phải anh ấy đã trở nên thừa cân và mất dáng / thể trạng kém, giống như những gì đã xảy ra với Levon Kirkland?",
+                optionsBreakdown: [
+                    "A. shape (danh từ): hình dáng, thể trạng.",
+                    "B. figure (danh từ): vóc dáng cơ thể.",
+                    "C. form (danh từ): hình thức, phong độ.",
+                    "D. stature (danh từ): tầm vóc, chiều cao."
+                ],
+                whyCorrect: "Thành ngữ 'out of shape' chỉ tình trạng cơ thể bị mất dáng, phát phì hoặc không đạt thể trạng sức khỏe tốt.",
+                whyOthersWrong: "Các từ figure, form, stature không ghép với 'out of' để tạo thành thành ngữ chỉ thể trạng kém/mất dáng."
+            },
+            {
+                id: 11,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 11. The rulings have drawn sharp _______ from world leaders and human rights groups.",
+                options: [
+                    "pratice",
+                    "insult",
+                    "criticism",
+                    "offence"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Các phán quyết đã vấp phải sự chỉ trích gay gắt từ các nhà lãnh đạo thế giới và các nhóm quyền con người.",
+                optionsBreakdown: [
+                    "A. pratice (danh từ): sự thực hành, thói quen.",
+                    "B. insult (danh từ): lời xúc phạm.",
+                    "C. criticism (danh từ): sự chỉ trích, lời phê bình.",
+                    "D. offence (danh từ): sự xúc phạm, tội lỗi."
+                ],
+                whyCorrect: "Cụm động từ cố định 'draw sharp criticism (from somebody)' có nghĩa là hứng chịu/vấp phải sự chỉ trích gay gắt.",
+                whyOthersWrong: "Các từ practice, insult, offence không đi với cụm 'draw sharp...' để chỉ việc hứng chịu làn sóng chỉ trích dư luận."
+            },
+            {
+                id: 12,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 12. I soon learned that pioneering was not always _______ sailing.",
+                options: [
+                    "natural",
+                    "sleek",
+                    "fluent",
+                    "smooth"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Tôi sớm nhận ra rằng công việc khai phá/tiên phong không phải lúc nào cũng thuận buồm xuôi gió.",
+                optionsBreakdown: [
+                    "A. natural (tính từ): tự nhiên.",
+                    "B. sleek (tính từ): mượt mà, bóng bẩy.",
+                    "C. fluent (tính từ): trôi chảy (ngôn ngữ).",
+                    "D. smooth (tính từ): mượt mà, suôn sẻ."
+                ],
+                whyCorrect: "Thành ngữ cố định 'smooth sailing' dùng để chỉ một công việc hoặc tiến trình diễn ra vô cùng suôn sẻ, thuận lợi.",
+                whyOthersWrong: "Các tính từ natural, sleek, fluent không đi với danh từ sailing để tạo thành thành ngữ suôn sẻ thuận lợi."
+            },
+            {
+                id: 13,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc từ vựng)",
+                text: "Question 13. The surface _______ of the brain is about 233 to 465 square inches.",
+                options: [
+                    "region",
+                    "range",
+                    "area",
+                    "realm"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Diện tích bề mặt của bộ não là khoảng 233 đến 465 inch vuông.",
+                optionsBreakdown: [
+                    "A. region (danh từ): vùng, địa phương.",
+                    "B. range (danh từ): phạm vi, dãy.",
+                    "C. area (danh từ): diện tích, khu vực.",
+                    "D. realm (danh từ): vương quốc, lĩnh vực."
+                ],
+                whyCorrect: "Thuật ngữ khoa học chỉ diện tích bề mặt của một vật thể hay cơ quan sinh học là 'surface area'.",
+                whyOthersWrong: "Region chỉ vùng địa lý. Range chỉ khoảng cách/phạm vi. Realm chỉ vương quốc hoặc lĩnh vực chuyên môn."
+            },
+
+            // PHRASES AND COLLOCATIONS (14 - 26)
+            {
+                id: 14,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 14. Your table _______ are appalling - don't you know how to use a knife and fork?",
+                options: [
+                    "behaviors",
+                    "manners",
+                    "actions",
+                    "performances"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Cách cư xử trên bàn ăn của bạn thật kinh khủng - bạn không biết cách dùng dao và nĩa à?",
+                optionsBreakdown: [
+                    "A. behaviors (danh từ số nhiều): hành vi cư xử chung.",
+                    "B. manners (danh từ số nhiều): quy tắc ứng xử, lịch sự.",
+                    "C. actions (danh từ số nhiều): hành động.",
+                    "D. performances (danh từ số nhiều): sự thể hiện, màn trình diễn."
+                ],
+                whyCorrect: "Cụm từ cố định 'table manners' có nghĩa là văn hóa/quy tắc ứng xử lịch sự trên bàn ăn.",
+                whyOthersWrong: "Behaviors, actions, performances không ghép với 'table' để tạo thành thuật ngữ lịch sự trên bàn ăn."
+            },
+            {
+                id: 15,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 15. This prong approach is not only the provision for material _______ nhưng cũng hướng tới việc xây dựng năng lực và quan hệ đối tác.",
+                options: [
+                    "resources",
+                    "funds",
+                    "origins",
+                    "facility"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Tiếp cận nhiều hướng này không chỉ là sự cung cấp các nguồn lực vật chất mà còn hướng tới việc xây dựng năng lực và quan hệ đối tác.",
+                optionsBreakdown: [
+                    "A. resources (danh từ số nhiều): nguồn lực, tài nguyên.",
+                    "B. funds (danh từ số nhiều): quỹ tiền tệ.",
+                    "C. origins (danh từ số nhiều): nguồn gốc.",
+                    "D. facility (danh từ): cơ sở vật chất."
+                ],
+                whyCorrect: "Cụm danh từ cố định 'material resources' chỉ các nguồn lực vật chất (thiết bị, tài sản, vật tư).",
+                whyOthersWrong: "Funds chỉ quỹ tiền. Origins chỉ nguồn gốc. Facility ở dạng số ít không đi phù hợp với ngữ cảnh tổng quát."
+            },
+            {
+                id: 16,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ giao tiếp)",
+                text: "Question 16. _______ yourself at home because I hope you'll stick around for a few more minutes with us.",
+                options: [
+                    "Put",
+                    "Let",
+                    "Make",
+                    "Do"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Hãy tự nhiên như ở nhà nhé vì tôi hy vọng bạn sẽ ở lại thêm vài phút nữa với chúng tôi.",
+                optionsBreakdown: [
+                    "A. Put (động từ nguyên mẫu): đặt, để.",
+                    "B. Let (động từ nguyên mẫu): cho phép.",
+                    "C. Make (động từ nguyên mẫu): làm, tạo ra.",
+                    "D. Do (động từ nguyên mẫu): làm."
+                ],
+                whyCorrect: "Thành ngữ giao tiếp lịch sự khi đón khách 'Make yourself at home' có nghĩa là cứ tự nhiên như ở nhà.",
+                whyOthersWrong: "Các động từ Put, Let, Do không tạo thành thành ngữ tự nhiên như ở nhà."
+            },
+            {
+                id: 17,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 17. According to ABC News, the storm will still leave a _______ on the city.",
+                options: [
+                    "sign",
+                    "seal",
+                    "spot",
+                    "mark"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Theo tin tức từ ABC News, trận bão vẫn sẽ để lại một vết tích/dấu ấn lên thành phố.",
+                optionsBreakdown: [
+                    "A. sign (danh từ): biển hiệu, dấu hiệu.",
+                    "B. seal (danh từ): con dấu.",
+                    "C. spot (danh từ): vết đốm.",
+                    "D. mark (danh từ): vết tích, dấu ấn."
+                ],
+                whyCorrect: "Cụm từ cố định 'leave a mark on something' có nghĩa là để lại hậu quả, vết tích hoặc ảnh hưởng sâu sắc lên cái gì.",
+                whyOthersWrong: "Các danh từ sign, seal, spot không ghép với 'leave a... on' để mang nghĩa để lại dấu vết ảnh hưởng."
+            },
+            {
+                id: 18,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 18. It is a concrete _______ of tiny apartments that make me creep with claustrophobia.",
+                options: [
+                    "ward",
+                    "jungle",
+                    "forest",
+                    "maze"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Đó là một mê cung bê tông gồm các căn hộ nhỏ tí hon khiến tôi phát sợ vì hội chứng sợ không gian hẹp.",
+                optionsBreakdown: [
+                    "A. ward (danh từ): phòng bệnh, phường.",
+                    "B. jungle (danh từ): khu rừng rậm.",
+                    "C. forest (danh từ): khu rừng.",
+                    "D. maze (danh từ): mê cung, trận đồ lằn rằn."
+                ],
+                whyCorrect: "Cụm từ 'a concrete maze' (mê cung bê tông) kết hợp với căn bệnh 'claustrophobia' (hội chứng sợ không gian kín/mê cung) làm nổi bật sự chật hẹp, rối rắm.",
+                whyOthersWrong: "Ward, jungle, forest không phù hợp để gắn liền trực tiếp với chứng bệnh sợ không gian chật hẹp rối rắm."
+            },
+
+            {
+                id: 19,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 19. Sorry, but you have to go through the metal _______ again.",
+                options: [
+                    "scanner",
+                    "rectifier",
+                    "detector",
+                    "engine"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Xin lỗi, nhưng bạn phải đi qua máy dò kim loại một lần nữa.",
+                optionsBreakdown: [
+                    "A. scanner (danh từ): máy quét hình ảnh.",
+                    "B. rectifier (danh từ): bộ chỉnh lưu điện.",
+                    "C. detector (danh từ): máy dò, thiết bị phát hiện.",
+                    "D. engine (danh từ): động cơ."
+                ],
+                whyCorrect: "Thuật ngữ an ninh chỉ máy dò kim loại ở sân bay hoặc cổng an ninh là 'metal detector'.",
+                whyOthersWrong: "Scanner dùng cho tài liệu/cơ thể. Rectifier là thiết bị điện. Engine là động cơ máy móc."
+            },
+            {
+                id: 20,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 20. The chef and his staff _______ a sharp eye on every aspect of kitchen-to-table execution.",
+                options: [
+                    "stick",
+                    "keep",
+                    "give",
+                    "hold"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Bếp trưởng và nhân viên của ông giữ mắt theo dõi chặt chẽ mọi khía cạnh từ bếp đến bàn ăn.",
+                optionsBreakdown: [
+                    "A. stick (động từ): dán, đâm.",
+                    "B. keep (động từ): giữ, duy trì.",
+                    "C. give (động từ): cho, tặng.",
+                    "D. hold (động từ): cầm, nắm."
+                ],
+                whyCorrect: "Cụm từ cố định 'keep a sharp eye on something' có nghĩa là theo dõi, giám sát cái gì một cách vô cùng cẩn thận.",
+                whyOthersWrong: "Các động từ stick, give, hold không kết hợp với 'a sharp eye on' để mang nghĩa theo dõi chặt chẽ."
+            },
+            {
+                id: 21,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 21. Only that you have a sharp _______ and an undisciplined sister, neither of which attributes I find endearing.",
+                options: [
+                    "word",
+                    "mouth",
+                    "tone",
+                    "tongue"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Chỉ là bạn có một cái miệng độc địa/hay nói lời cay nghiệt và một cô em gái vô kỷ luật, không thuộc tính nào trong đó khiến tôi thấy đáng yêu.",
+                optionsBreakdown: [
+                    "A. word (danh từ): từ ngữ.",
+                    "B. mouth (danh từ): cái miệng.",
+                    "C. tone (danh từ): giọng điệu.",
+                    "D. tongue (danh từ): cái lưỡi, lời nói."
+                ],
+                whyCorrect: "Thành ngữ 'have a sharp tongue' miêu tả một người có tính hay nói những lời cay nghiệt, mỉa mai hoặc độc địa.",
+                whyOthersWrong: "Các từ word, mouth, tone không ghép với 'have a sharp...' để tạo thành thành ngữ chỉ tính cách hay nói lời cay nghiệt."
+            },
+            {
+                id: 22,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Giới từ đi với cụm từ)",
+                text: "Question 22. Ever since the mid-1980s, politicians have won votes by promising to get tough _______ criminals.",
+                options: [
+                    "to",
+                    "on",
+                    "with",
+                    "of"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Kể từ giữa những năm 1980, các chính trị gia đã giành được phiếu bầu bằng cách hứa sẽ cứng rắn/mạnh tay với bọn tội phạm.",
+                optionsBreakdown: [
+                    "A. to (giới từ): tới, đến.",
+                    "B. on (giới từ): trên, với.",
+                    "C. with (giới từ): với.",
+                    "D. of (giới từ): của."
+                ],
+                whyCorrect: "Cấu trúc kết hợp cố định 'get tough on somebody/something' có nghĩa là thực thi biện pháp cứng rắn, trừng phạt nghiêm khắc ai.",
+                whyOthersWrong: "Các giới từ to, with, of không đi với 'get tough' để tạo thành cấu trúc cứng rắn với tội phạm."
+            },
+            {
+                id: 23,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm danh từ cố định)",
+                text: "Question 23. Ultimately, the project failed because town _______ approval was not forthcoming.",
+                options: [
+                    "arrangement",
+                    "planning",
+                    "program",
+                    "scheme"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Cuối cùng, dự án đã thất bại vì sự phê duyệt quy hoạch đô thị đã không được đưa ra.",
+                optionsBreakdown: [
+                    "A. arrangement (danh từ): sự sắp xếp.",
+                    "B. planning (danh từ): việc lập kế hoạch, quy hoạch.",
+                    "C. program (danh từ): chương trình.",
+                    "D. scheme (danh từ): kế hoạch, đồ án."
+                ],
+                whyCorrect: "Thuật ngữ ngành quản lý và đô thị chỉ ngành quy hoạch đô thị là 'town planning'.",
+                whyOthersWrong: "Arrangement, program, scheme khi đi với town không tạo thành thuật ngữ chính thức về quy hoạch đô thị."
+            },
+            {
+                id: 24,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 24. _______ shopping, refers to an activity in which a consumer browses through or examines a store's merchandise as a form of leisure or external search behaviour without a current intent to buy.",
+                options: [
+                    "Door",
+                    "Window",
+                    "Job",
+                    "Street"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Việc ngắm nghía đồ qua tủ kính đề cập đến một hoạt động trong đó người tiêu dùng xem qua hàng hóa của cửa hàng như một hình thức giải trí mà không có ý định mua ngay.",
+                optionsBreakdown: [
+                    "A. Door (danh từ): cánh cửa.",
+                    "B. Window (danh từ): cửa sổ, tủ kính trưng bày.",
+                    "C. Job (danh từ): công việc.",
+                    "D. Street (danh từ): con đường."
+                ],
+                whyCorrect: "Thuật ngữ 'window shopping' có nghĩa là việc đi ngắm hàng hóa qua ô kính trưng bày mà không có ý định mua.",
+                whyOthersWrong: "Các từ Door, Job, Street không ghép với shopping để chỉ hành động ngắm nghía đồ trưng bày."
+            },
+            {
+                id: 25,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ cố định)",
+                text: "Question 25. The night club has booked an excellent _______ show.",
+                options: [
+                    "underside",
+                    "yard",
+                    "chat",
+                    "floor"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Hộp đêm đã đặt một chương trình biểu diễn sân khấu / sàn diễn tuyệt vời.",
+                optionsBreakdown: [
+                    "A. underside (danh từ): mặt dưới.",
+                    "B. yard (danh từ): cái sân.",
+                    "C. chat (danh từ): trò chuyện.",
+                    "D. floor (danh từ): sàn nhà, sàn diễn."
+                ],
+                whyCorrect: "Cụm danh từ 'floor show' dùng để chỉ một chương trình biểu diễn nghệ thuật (múa, hát, tạp kỹ) tại hộp đêm hoặc nhà hàng.",
+                whyOthersWrong: "Underside, yard, chat không ghép với 'show' để tạo thành thuật ngữ biểu diễn ở hộp đêm."
+            },
+            {
+                id: 26,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Danh từ chỉ nghề nghiệp)",
+                text: "Question 26. A _______, like a mason, is a craftsman and artisan who lays bricks to build brickwork.",
+                options: [
+                    "concretor",
+                    "painter",
+                    "carpenter",
+                    "bricklayer"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Thợ xây / thợ đặt gạch, giống như thợ đá, là một thợ thủ công người đặt từng viên gạch để xây dựng các công trình gạch.",
+                optionsBreakdown: [
+                    "A. concretor (danh từ): thợ làm bê tông.",
+                    "B. painter (danh từ): thợ sơn, họa sĩ.",
+                    "C. carpenter (danh từ): thợ mộc.",
+                    "D. bricklayer (danh từ): thợ xây gạch, thợ đặt gạch."
+                ],
+                whyCorrect: "Danh từ 'bricklayer' miêu tả chính xác người thợ thủ công có nghề nghiệp chuyên đặt gạch (lays bricks) để xây tường.",
+                whyOthersWrong: "Concretor làm về bê tông. Painter làm về sơn. Carpenter làm về gỗ."
+            },
+
+            // VOCABULARY IN CONTRAST (27 - 34)
+            {
+                id: 27,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 27. On two occasions she had peeked at him through a _______ in the wall.",
+                options: [
+                    "brick",
+                    "shield",
+                    "crack",
+                    "scratch"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Đã hai lần cô ấy lén nhìn anh qua một vết nứt trên tường.",
+                optionsBreakdown: [
+                    "A. brick (danh từ): viên gạch.",
+                    "B. shield (danh từ): tấm lá chắn.",
+                    "C. crack (danh từ): vết nứt, khe nứt.",
+                    "D. scratch (danh từ): vết trầy xước."
+                ],
+                whyCorrect: "Danh từ 'crack' chỉ một vết nứt hở có khoảng trống giúp ai đó có thể nhìn xuyên qua tường.",
+                whyOthersWrong: "Brick là viên gạch đặc. Shield là tấm chắn. Scratch chỉ là vết xước trên bề mặt chứ không thủng/nứt ra."
+            },
+            {
+                id: 28,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 28. To treat dandruff, _______ two aspirin tablets and add them to your usual shampoo.",
+                options: [
+                    "crush",
+                    "crash",
+                    "smash",
+                    "rub"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Để trị gàu, hãy nghiền nát hai viên thuốc aspirin và thêm chúng vào dầu gội thông thường của bạn.",
+                optionsBreakdown: [
+                    "A. crush (động từ): nghiền nát, đập vụn.",
+                    "B. crash (động từ): đâm sầm, va chạm.",
+                    "C. smash (động từ): đập vỡ tan tành.",
+                    "D. rub (động từ): chà xát."
+                ],
+                whyCorrect: "Động từ 'crush' có nghĩa là dùng lực nén nghiền một vật cứng (như viên thuốc) thành dạng bột mịn.",
+                whyOthersWrong: "Crash là va chạm xe cộ. Smash là đập vỡ đồ thủy tinh/sứ. Rub là chà xát bề mặt."
+            },
+            {
+                id: 29,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 29. No, although mercury is a metal, it isn't normally a _______.",
+                options: [
+                    "liquid",
+                    "gas",
+                    "substance",
+                    "solid"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Không, mặc dù thủy ngân là một kim loại, nhưng nó bình thường không phải là một chất rắn.",
+                optionsBreakdown: [
+                    "A. liquid (danh từ): chất lỏng.",
+                    "B. gas (danh từ): chất khí.",
+                    "C. substance (danh từ): chất.",
+                    "D. solid (danh từ): chất rắn."
+                ],
+                whyCorrect: "Thủy ngân (mercury) là kim loại duy nhất ở dạng lỏng ở nhiệt độ phòng, do đó nó 'không phải là chất rắn' (isn't normally a solid).",
+                whyOthersWrong: "Mercury ở dạng lỏng nên khẳng định nó không phải là lỏng (liquid) hay chất (substance) là sai thực tế khoa học."
+            },
+            {
+                id: 30,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 30. Another method, used especially for figures, was to pour the clay into a _______.",
+                options: [
+                    "model",
+                    "mould",
+                    "pattern",
+                    "plan"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Một phương pháp khác, được sử dụng đặc biệt cho các bức tượng, là đổ đất sét vào một cái khuôn.",
+                optionsBreakdown: [
+                    "A. model (danh từ): mô hình.",
+                    "B. mould (danh từ): cái khuôn đúc.",
+                    "C. pattern (danh từ): hoa văn, mẫu hình.",
+                    "D. plan (danh từ): bản kế hoạch."
+                ],
+                whyCorrect: "Danh từ 'mould' chỉ chiếc khuôn trống để người ta đổ vật liệu lỏng/mềm (đất sét, kim loại nóng chảy) vào định hình.",
+                whyOthersWrong: "Model là mô hình đã hoàn thành. Pattern là mẫu hoa văn. Plan là bản kế hoạch vẽ trên giấy."
+            },
+            {
+                id: 31,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 31. He can't _______ the wet coat dry.",
+                options: [
+                    "squash",
+                    "crush",
+                    "squeeze",
+                    "suppress"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Anh ấy không thể vắt khô chiếc áo khoác đang ướt.",
+                optionsBreakdown: [
+                    "A. squash (động từ): nén bẹp, đè bẹp.",
+                    "B. crush (động từ): nghiền nát.",
+                    "C. squeeze (động từ): vắt, ép.",
+                    "D. suppress (động từ): đàn áp, kìm hãm."
+                ],
+                whyCorrect: "Cụm động từ 'squeeze something dry' có nghĩa là vắt mạnh chiếc quần áo ướt để ra hết nước.",
+                whyOthersWrong: "Squash là làm bẹp hoa quả/đồ vật. Crush là nghiền nát thành bột. Suppress là đàn áp cảm xúc/cuộc nổi dậy."
+            },
+            {
+                id: 32,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 32. Buôn Đôn is a rural _______ of Đắk Lắk Province in the Central Highlands region of Vietnam.",
+                options: [
+                    "district",
+                    "city",
+                    "commune",
+                    "hamlet"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Buôn Đôn là một huyện nông thôn thuộc tỉnh Đắk Lắk ở vùng Tây Nguyên của Việt Nam.",
+                optionsBreakdown: [
+                    "A. district (danh từ): huyện, quận.",
+                    "B. city (danh từ): thành phố.",
+                    "C. commune (danh từ): xã.",
+                    "D. hamlet (danh từ): thôn, xóm."
+                ],
+                whyCorrect: "Về mặt địa lý hành chính Việt Nam, Buôn Đôn thuộc cấp huyện ('district') của tỉnh Đắk Lắk.",
+                whyOthersWrong: "City là thành phố. Commune là xã. Hamlet là thôn xóm nhỏ (đều không đúng cấp hành chính của Buôn Đôn)."
+            },
+            {
+                id: 33,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 33. The lessor can _______ the lessee for failure to pay rent.",
+                options: [
+                    "sack",
+                    "evict",
+                    "expel",
+                    "banish"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Bên cho thuê có thể trục xuất bên thuê nhà vì không trả tiền thuê nhà.",
+                optionsBreakdown: [
+                    "A. sack (động từ): sa thải công nhân.",
+                    "B. evict (động từ): trục xuất người thuê khỏi nhà.",
+                    "C. expel (động từ): đuổi học, trục xuất khỏi nước.",
+                    "D. banish (động từ): đày ải, xua đuổi."
+                ],
+                whyCorrect: "Động từ 'evict' được dùng riêng trong pháp lý và bất động sản chỉ hành động đuổi/trục xuất người thuê nhà ra khỏi tài sản vì vi phạm hợp đồng.",
+                whyOthersWrong: "Sack dùng cho công việc. Expel dùng cho trường học/tổ chức. Banish dùng cho đày ải khỏi quốc gia."
+            },
+            {
+                id: 34,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 34. The _______ of domes and minarets was imprinted on my memory.",
+                options: [
+                    "horizon",
+                    "skyline",
+                    "scope",
+                    "range"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Toàn cảnh đường nét mái đòm và tháp nhà thờ in đậm trong ký ức tôi.",
+                optionsBreakdown: [
+                    "A. horizon (danh từ): đường chân trời phẳng.",
+                    "B. skyline (danh từ): đường nét kiến trúc thành phố trên nền trời.",
+                    "C. scope (danh từ): phạm vi.",
+                    "D. range (danh từ): dãy, phạm vi."
+                ],
+                whyCorrect: "Danh từ 'skyline' chỉ hình ảnh tổng thể các công trình kiến trúc (mái đầm, tháp, tòa nhà) hiện lên trên nền trời.",
+                whyOthersWrong: "Horizon là đường tiếp giáp giữa mặt đất và bầu trời. Scope và range chỉ phạm vi chứ không chỉ quang cảnh kiến trúc."
+            },
+
+            // PHRASAL VERBS (35 - 42)
+            {
+                id: 35,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 35. The vacant store had been _______ for several years.",
+                options: [
+                    "keptd up",
+                    "piled up",
+                    "juiced up",
+                    "boarded up"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Cửa hàng bỏ trống đã bị bịt kín bằng ván gỗ trong vài năm.",
+                optionsBreakdown: [
+                    "A. keptd up (từ sai chính tả): duy trì.",
+                    "B. piled up (cụm động từ): chất đống.",
+                    "C. juiced up (cụm động từ): làm cho sống động/tăng sức mạnh.",
+                    "D. boarded up (cụm động từ): bịt kín cửa bằng ván gỗ."
+                ],
+                whyCorrect: "Cụm động từ 'board up' có nghĩa là dùng các tấm ván gỗ đóng kín cửa sổ/cửa ra vào của một tòa nhà bỏ hoang.",
+                whyOthersWrong: "Các cụm kept up (duy trì), piled up (chất đống), juiced up (tiếp năng lượng) không hợp ngữ cảnh nhà bỏ trống."
+            },
+            {
+                id: 36,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 36. All the shops _______ for the night.",
+                options: [
+                    "closed up",
+                    "closed off",
+                    "closed down",
+                    "closed in"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Tất cả các cửa hàng đã đóng cửa khóa ngoài cho ban đêm.",
+                optionsBreakdown: [
+                    "A. closed up (cụm động từ): đóng cửa tạm thời vào cuối ngày.",
+                    "B. closed off (cụm động từ): phong tỏa lối đi.",
+                    "C. closed down (cụm động từ): đóng cửa phá sản vĩnh viễn.",
+                    "D. closed in (cụm động từ): bao vây, tối dần."
+                ],
+                whyCorrect: "Cụm động từ 'close up' dùng để chỉ hành động đóng cửa, khóa cửa tiệm nghỉ ngơi vào cuối ngày (for the night).",
+                whyOthersWrong: "Closed off là rào chắn lối đi. Closed down là đóng cửa ngừng kinh doanh hẳn. Closed in là tiến lại gần/bao phủ."
+            },
+            {
+                id: 37,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 37. Our album _______ two months ago, and now we have another album of covers for free for people.",
+                options: [
+                    "came on",
+                    "came in",
+                    "came out",
+                    "came off"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Album của chúng tôi đã ra mắt cách đây hai tháng, và bây giờ chúng tôi có một album nhạc cover khác miễn phí cho mọi người.",
+                optionsBreakdown: [
+                    "A. came on (cụm động từ): bắt đầu chiếu, tiến lên.",
+                    "B. came in (cụm động từ): đi vào, đến nơi.",
+                    "C. came out (cụm động từ): phát hành, ra mắt công chúng.",
+                    "D. came off (cụm động từ): thành công, bong ra."
+                ],
+                whyCorrect: "Cụm động từ 'come out' khi dùng cho sản phẩm âm nhạc, sách báo hay phim ảnh có nghĩa là được phát hành / ra mắt.",
+                whyOthersWrong: "Came on, came in, came off không mang nghĩa sản phẩm âm nhạc được phát hành."
+            },
+            {
+                id: 38,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 38. For a beak, fold yellow construction paper, and _______ a small double triangle.",
+                options: [
+                    "crop out",
+                    "cut out",
+                    "burn out",
+                    "sail out"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Để làm cái mỏ, hãy gấp giấy thủ công màu vàng và cắt ra một hình tam giác kép nhỏ.",
+                optionsBreakdown: [
+                    "A. crop out (cụm động từ): cắt bỏ rìa ảnh.",
+                    "B. cut out (cụm động từ): cắt rời ra bằng kéo.",
+                    "C. burn out (cụm động từ): cháy rụi, kiệt sức.",
+                    "D. sail out (cụm động từ): giương buồm ra khơi."
+                ],
+                whyCorrect: "Cụm động từ 'cut out' miêu tả hành động dùng kéo cắt một hình thù nào đó rời ra từ tờ giấy.",
+                whyOthersWrong: "Crop out là cắt bớt góc ảnh kỹ thuật số. Burn out là kiệt sức. Sail out là ra khơi."
+            },
+            {
+                id: 39,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 39. You know, if you need a place to stay, we can _______ that old spare room.",
+                options: [
+                    "take up",
+                    "screw up",
+                    "build up",
+                    "fix up"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Bạn biết đấy, nếu bạn cần một nơi để ở, chúng tôi có thể dọn dẹp sửa sang lại căn phòng trống cũ đó cho bạn.",
+                optionsBreakdown: [
+                    "A. take up (cụm động từ): bắt đầu thói quen, chiếm không gian.",
+                    "B. screw up (cụm động từ): làm hỏng chuyện.",
+                    "C. build up (cụm động từ): tích lũy, gia tăng.",
+                    "D. fix up (cụm động từ): trang hoàng, dọn dẹp chuẩn bị phòng."
+                ],
+                whyCorrect: "Cụm động từ 'fix up' có nghĩa là sửa sang, trang trí hoặc dọn dẹp sạch sẽ một căn phòng/nơi ở để chuẩn bị tiếp khách.",
+                whyOthersWrong: "Take up (chiếm chỗ), screw up (làm hỏng), build up (tích tụ) không mang nghĩa sửa sang phòng cho người khác ở."
+            },
+            {
+                id: 40,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 40. Now that the sale is over someone needs to _______ the notices.",
+                options: [
+                    "throw down",
+                    "take down",
+                    "fall down",
+                    "push down"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Bây giờ chương trình giảm giá đã kết thúc, ai đó cần phải gỡ các thông báo xuống.",
+                optionsBreakdown: [
+                    "A. throw down (cụm động từ): ném xuống.",
+                    "B. take down (cụm động từ): tháo xuống, gỡ bỏ.",
+                    "C. fall down (cụm động từ): ngã xuống.",
+                    "D. push down (cụm động từ): đẩy xuống."
+                ],
+                whyCorrect: "Cụm động từ 'take down' có nghĩa là tháo dỡ hoặc gỡ một tấm bảng/thông báo/bức tranh đang treo trên tường xuống.",
+                whyOthersWrong: "Throw down (ném xuống), fall down (tự ngã), push down (đẩy lùi) không miêu tả hành động gỡ thông báo."
+            },
+            {
+                id: 41,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 41. I will never support a political party that would _______ our rights under the constitution.",
+                options: [
+                    "water down",
+                    "knock down",
+                    "scale down",
+                    "come down"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Tôi sẽ không bao giờ ủng hộ một đảng chính trị làm suy yếu / giảm giá trị các quyền của chúng tôi theo hiến pháp.",
+                optionsBreakdown: [
+                    "A. water down (cụm động từ): làm giảm hiệu lực, làm suy yếu.",
+                    "B. knock down (cụm động từ): xô ngã, hạ giá.",
+                    "C. scale down (cụm động từ): thu nhỏ quy mô.",
+                    "D. come down (cụm động từ): đi xuống, sụp đổ."
+                ],
+                whyCorrect: "Cụm động từ 'water down' khi dùng cho luật pháp hay quyền lợi có nghĩa là làm giảm hiệu lực hoặc làm suy yếu tầm quan trọng của nó.",
+                whyOthersWrong: "Knock down (đánh ngã), scale down (thu nhỏ quy mô kinh doanh), come down (rơi xuống) không mang nghĩa làm giảm hiệu lực pháp lý."
+            },
+            {
+                id: 42,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 42. The strategy was designed to _______ the enemy's resistance.",
+                options: [
+                    "row down",
+                    "slide down",
+                    "wear down",
+                    "bring down"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Chiến lược này được thiết kế để làm suy kiệt sức kháng cự của kẻ thù.",
+                optionsBreakdown: [
+                    "A. row down (cụm động từ): chèo thuyền xuống.",
+                    "B. slide down (cụm động từ): trượt xuống.",
+                    "C. wear down (cụm động từ): làm kiệt sức, bào mòn sức chịu đựng.",
+                    "D. bring down (cụm động từ): hạ bệ chính phủ."
+                ],
+                whyCorrect: "Cụm động từ 'wear down' có nghĩa là bào mòn làm kiệt sức dần dần đối phương hoặc sự kháng cự (resistance).",
+                whyOthersWrong: "Row down, slide down không hợp nghĩa. Bring down dùng cho việc lật đổ chính quyền chứ không đi với 'resistance'."
+            },
+
+            // SYNONYM (43 - 45)
+            {
+                id: 43,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 43. It was all over in a matter of minutes.",
+                options: [
+                    "a lot of",
+                    "many of",
+                    "great number of",
+                    "a few"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Tất cả đã kết thúc chỉ trong vòng vài phút.",
+                optionsBreakdown: [
+                    "A. a lot of (cụm từ): rất nhiều.",
+                    "B. many of (cụm từ): nhiều trong số.",
+                    "C. great number of (cụm từ): số lượng rất lớn.",
+                    "D. a few (cụm từ): một vài."
+                ],
+                whyCorrect: "Cụm từ 'in a matter of minutes' nhấn mạnh thời gian diễn ra cực kỳ nhanh chóng (chỉ trong vài phút), đồng nghĩa với 'a few minutes'.",
+                whyOthersWrong: "Các cụm a lot of, many of, great number of mang nghĩa rất nhiều, trái ngược với ý nhấn mạnh thời gian ngắn."
+            },
+            {
+                id: 44,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 44. My kids leave dirty plates stacked up in the sink until I get home.",
+                options: [
+                    "board up",
+                    "piled up",
+                    "rounded up",
+                    "juiced up"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Mấy đứa con tôi để lại đĩa bẩn chất thành đống trong bồn rửa bát cho đến khi tôi về nhà.",
+                optionsBreakdown: [
+                    "A. board up (cụm động từ): bịt kín ván gỗ.",
+                    "B. piled up (cụm động từ): chất thành đống.",
+                    "C. rounded up (cụm động từ): gom lại.",
+                    "D. juiced up (cụm động từ): tiếp năng lượng."
+                ],
+                whyCorrect: "Cụm từ 'stacked up' có nghĩa là xếp chồng/chất thành đống, đồng nghĩa hoàn toàn với 'piled up'.",
+                whyOthersWrong: "Board up (bịt ván gỗ), rounded up (vây bắt/gom lại), juiced up (tăng sức mạnh) không mang nghĩa xếp chồng đĩa bẩn."
+            },
+            {
+                id: 45,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 45. Just as a house needs a firm foundation, the rootvg must be solid for the migration to be successful.",
+                options: [
+                    "flexible",
+                    "plastic",
+                    "strong",
+                    "soft"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Giống như một ngôi nhà cần một nền móng vững chắc, hệ thống phải kiên cố để quá trình chuyển đổi thành công.",
+                optionsBreakdown: [
+                    "A. flexible (tính từ): linh hoạt.",
+                    "B. plastic (tính từ): bằng nhựa, dễ uốn.",
+                    "C. strong (tính từ): vững chắc, mạnh mẽ.",
+                    "D. soft (tính từ): mềm mại."
+                ],
+                whyCorrect: "Tính từ 'firm' có nghĩa là kiên cố, vững chắc, đồng nghĩa với 'strong'.",
+                whyOthersWrong: "Flexible (linh hoạt), plastic (dễ uốn), soft (mềm) không mang nghĩa kiên cố vững chắc cho nền móng."
+            },
+
+            // WORD FORMATIONS (46 - 48)
+            {
+                id: 46,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 46. McCarthy was asked to _______ the data from the first phase of trials of the vaccine.",
+                options: [
+                    "analyst",
+                    "analytical",
+                    "analysis",
+                    "analyse"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: McCarthy được yêu cầu phân tích dữ liệu từ giai đoạn thử nghiệm vắc-xin đầu tiên.",
+                optionsBreakdown: [
+                    "A. analyst (danh từ chỉ người): nhà phân tích.",
+                    "B. analytical (tính từ): mang tính phân tích.",
+                    "C. analysis (danh từ chỉ sự vật): sự phân tích.",
+                    "D. analyse (động từ nguyên mẫu): phân tích."
+                ],
+                whyCorrect: "Sau cấu trúc 'be asked to' ta cần một động từ nguyên mẫu không 'to' (V-bare). Do đó chọn động từ 'analyse'.",
+                whyOthersWrong: "Analyst và analysis là danh từ. Analytical là tính từ (không đứng sau 'to' làm hành động nguyên mẫu)."
+            },
+            {
+                id: 47,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 47. Firstly, the paper analyzes the final consumption rate and the _______ consumption rate of China.",
+                options: [
+                    "inhabitant",
+                    "inhabit",
+                    "habitation",
+                    "habitable"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Đầu tiên, bài báo phân tích tỷ lệ tiêu dùng cuối cùng và tỷ lệ tiêu dùng của cư dân Trung Quốc.",
+                optionsBreakdown: [
+                    "A. inhabitant (danh từ chỉ người): cư dân.",
+                    "B. inhabit (động từ): sinh sống.",
+                    "C. habitation (danh từ): sự cư trú.",
+                    "D. habitable (tính từ): có thể ở được."
+                ],
+                whyCorrect: "Trước cụm danh từ 'consumption rate' ta cần một danh từ đóng vai trò bổ nghĩa chỉ chủ thể tiêu dùng (tỷ lệ tiêu dùng của cư dân - inhabitant consumption rate).",
+                whyOthersWrong: "Inhabit là động từ. Habitation chỉ việc ở. Habitable chỉ tính chất ở được."
+            },
+            {
+                id: 48,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 48. These predictions have yet to _______, and youth crime rates have been on the decline for several years.",
+                options: [
+                    "materialism",
+                    "materialistic",
+                    "materialise",
+                    "immaterial"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Những dự đoán này vẫn chưa trở thành hiện thực, và tỷ lệ tội phạm thanh thiếu niên đã giảm trong vài năm qua.",
+                optionsBreakdown: [
+                    "A. materialism (danh từ): chủ nghĩa vật chất.",
+                    "B. materialistic (tính từ): thực dụng vật chất.",
+                    "C. materialise (động từ nguyên mẫu): hiện thực hóa, trở thành hiện thực.",
+                    "D. immaterial (tính từ): phi vật chất, không quan trọng."
+                ],
+                whyCorrect: "Sau cấu trúc 'have yet to' ta cần một động từ nguyên mẫu (V-bare). Do đó chọn động từ 'materialise'.",
+                whyOthersWrong: "Materialism là danh từ. Materialistic và immaterial là tính từ."
+            },
+
+            // ANTONYM (49 - 50)
+            {
+                id: 49,
+                section: "ANTONYM",
+                instruction: "ANTONYM (Tìm từ Trái nghĩa)",
+                text: "Question 49. Be careful with that vase - it's very fragile.",
+                options: [
+                    "sturdy",
+                    "slender",
+                    "tender",
+                    "flaccid"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Hãy cẩn thận với cái bình đó - nó rất mỏng mảnh dễ vỡ.",
+                optionsBreakdown: [
+                    "A. sturdy (tính từ): vững chắc, bền bỉ.",
+                    "B. slender (tính từ): mảnh khảnh, thon thả.",
+                    "C. tender (tính từ): mềm mại, dịu dàng.",
+                    "D. flaccid (tính từ): mềm nhũn, ẻo lả."
+                ],
+                whyCorrect: "Tính từ 'fragile' có nghĩa là mỏng mảnh, dễ vỡ. Do đó từ TRÁI NGHĨA hoàn toàn là 'sturdy' (vững chắc, bền bỉ).",
+                whyOthersWrong: "Slender (thon thả), tender (mềm), flaccid (nhũn) không mang nghĩa bền bỉ kiên cố trái ngược với dễ vỡ."
+            },
+            {
+                id: 50,
+                section: "ANTONYM",
+                instruction: "ANTONYM (Tìm từ Trái nghĩa)",
+                text: "Question 50. And they were glazed with opaque white glass so that the patients couldn't see out either, nor passers-by see in.",
+                options: [
+                    "vague",
+                    "cloudy",
+                    "pellucid",
+                    "muddy"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Và chúng được tráng bằng kính màu trắng mờ đục để bệnh nhân không thể nhìn ra ngoài, mà người qua đường cũng không nhìn vào trong được.",
+                optionsBreakdown: [
+                    "A. vague (tính từ): mơ hồ.",
+                    "B. cloudy (tính từ): u ám, mờ đục.",
+                    "C. pellucid (tính từ): trong suốt, nhìn xuyên qua được.",
+                    "D. muddy (tính từ): bùn lầy, đục ngầu."
+                ],
+                whyCorrect: "Tính từ 'opaque' có nghĩa là mờ đục, không nhìn xuyên qua được. Do đó từ TRÁI NGHĨA hoàn toàn là 'pellucid' (trong suốt, rõ ràng).",
+                whyOthersWrong: "Vague, cloudy, muddy đều mang nghĩa mờ đục/không rõ ràng (đồng nghĩa hoặc gần nghĩa với opaque)."
+            }
+        ];
+
+        // Web Audio Synth
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playDingSound() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const now = audioCtx.currentTime;
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc1.type = 'sine';
+            osc2.type = 'triangle';
+
+            osc1.frequency.setValueAtTime(523.25, now);
+            osc1.frequency.exponentialRampToValueAtTime(1046.50, now + 0.15);
+
+            osc2.frequency.setValueAtTime(659.25, now);
+            osc2.frequency.exponentialRampToValueAtTime(1318.51, now + 0.15);
+
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + 0.4);
+            osc2.stop(now + 0.4);
+        }
+
+        function playWrongSound() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(180, now);
+            osc.frequency.linearRampToValueAtTime(110, now + 0.3);
+
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.35);
+        }
+
+        function launchConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const pieces = [];
+            const numberOfPieces = 100;
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#00D26A', '#2196f3', '#03a9f4', '#ffeb3b', '#ff9800'];
+
+            for (let i = 0; i < numberOfPieces; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    rotation: Math.random() * 360,
+                    size: Math.random() * 10 + 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    oscSpeed: Math.random() * 0.05 + 0.02,
+                    oscStep: Math.random() * Math.PI
+                });
+            }
+
+            let frames = 0;
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach(p => {
+                    p.y += p.speed;
+                    p.oscStep += p.oscSpeed;
+                    p.x += Math.sin(p.oscStep) * 2;
+                    p.rotation += 2;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+
+                frames++;
+                if (frames < 120) {
+                    requestAnimationFrame(update);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+            update();
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        const userAnswers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            let currentSection = "";
+
+            rawQuizData.forEach((q) => {
+                if (q.section !== currentSection) {
+                    currentSection = q.section;
+                    const secHeader = document.createElement('div');
+                    secHeader.className = 'section-header-title';
+                    secHeader.innerText = currentSection;
+                    container.appendChild(secHeader);
+                }
+
+                // Shuffle options A, B, C, D
+                const optionsObj = q.options.map((opt, origIdx) => ({
+                    text: opt,
+                    originalIndex: origIdx
+                }));
+                const shuffledOptions = shuffleArray(optionsObj);
+
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${q.id}`;
+
+                let optionsHTML = '';
+                shuffledOptions.forEach((optObj, btnIdx) => {
+                    const letter = String.fromCharCode(65 + btnIdx);
+                    optionsHTML += `
+                        <button class="option-btn" 
+                                id="btn-${q.id}-${optObj.originalIndex}" 
+                                onclick="handleSelect(${q.id}, ${optObj.originalIndex}, ${q.correctIndex})">
+                            <strong style="margin-right:8px; min-width:24px;">${letter}.</strong> ${optObj.text}
+                        </button>
+                    `;
+                });
+
+                let breakdownHTML = q.optionsBreakdown.map(item => `<div class="option-breakdown-item">• ${item}</div>`).join('');
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <span class="question-number">Câu ${q.id}</span>
+                        <span class="question-instruction">${q.instruction}</span>
+                    </div>
+                    <div class="question-text">${q.text}</div>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    
+                    <div class="explanation-box" id="exp-${q.id}">
+                        <div class="explanation-title">💡 GIẢI THÍCH CHI TIẾT TỪ MS LÊ HẰNG ENGLISH</div>
+                        
+                        <div class="exp-section">
+                            <div class="exp-section-title">1. Dịch nghĩa toàn câu:</div>
+                            <p style="color:#2D3748; font-weight:700;">${q.translation}</p>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">2. Phân tích ngữ pháp / từ vựng cả 4 đáp án:</div>
+                            <div class="options-breakdown-list">${breakdownHTML}</div>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">3. Tại sao đáp án đúng lại đúng?</div>
+                            <p style="color:#276749; font-weight:800;">${q.whyCorrect}</p>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">4. Tại sao các đáp án còn lại sai?</div>
+                            <p style="color:#C53030; font-weight:800;">${q.whyOthersWrong}</p>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function handleSelect(questionId, selectedIdx, correctIdx) {
+            if (userAnswers[questionId] !== undefined) return;
+
+            userAnswers[questionId] = selectedIdx;
+
+            const card = document.getElementById(`q-card-${questionId}`);
+            const selectedBtn = document.getElementById(`btn-${questionId}-${selectedIdx}`);
+            const correctBtn = document.getElementById(`btn-${questionId}-${correctIdx}`);
+            const expBox = document.getElementById(`exp-${questionId}`);
+
+            const allBtns = card.querySelectorAll('.option-btn');
+            allBtns.forEach(btn => btn.disabled = true);
+
+            if (selectedIdx === correctIdx) {
+                selectedBtn.classList.add('correct');
+                playDingSound();
+                launchConfetti();
+            } else {
+                selectedBtn.classList.add('wrong');
+                correctBtn.classList.add('correct');
+                card.classList.add('shake');
+                playWrongSound();
+            }
+
+            expBox.style.display = 'block';
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            const total = rawQuizData.length;
+
+            rawQuizData.forEach(q => {
+                if (userAnswers[q.id] === q.correctIndex) {
+                    score++;
+                }
+            });
+
+            const percentage = (score / total) * 100;
+            let feedback = "";
+
+            if (percentage < 50) {
+                feedback = "“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”";
+            } else if (percentage >= 60 && percentage <= 80) {
+                feedback = "“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”";
+            } else {
+                feedback = "“Làm tốt lắm, con cố gắng rinh điểm 10 ở lần sau nha!”";
+            }
+
+            document.getElementById('scoreDisplay').innerText = `${score} / ${total}`;
+            document.getElementById('feedbackDisplay').innerText = feedback;
+            document.getElementById('scoreModal').style.display = 'flex';
+
+            if (percentage >= 80) {
+                launchConfetti();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('scoreModal').style.display = 'none';
+        }
+
+        window.onload = () => {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
